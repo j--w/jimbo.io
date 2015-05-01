@@ -1,0 +1,49 @@
+@import "bourbon";
+@import "neat";
+@import "lib/normalize";
+$mobile: new-breakpoint(max-width 800px 4);
+html, body {
+	height: 100%;
+}
+body {
+	@include linear-gradient(#D8FFFD, #BCFCFF);
+	font-family: 'Josefin Sans', sans-serif;
+}
+.container {
+	@include outer-container;
+	section {
+		@include span-columns(8);
+		@include shift(2);
+		@include media($mobile) {
+		  	width: 100%;
+		  	@include shift(0);
+		  	padding: 0 2%;
+		}
+	}
+}
+
+a{
+	color: #333;
+	text-decoration: none;
+	border-bottom: 1px dashed #999;
+	padding: 0 rem(3);
+	&:hover {
+		background: #333;
+		color: #ccc;
+	}
+}
+
+h1,h2,h3 {
+	font-family: 'Amatic SC', cursive;
+	font-weight: 400;
+}
+h1 {
+	font-size: rem(125);
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+p {
+	font-size: rem(22);
+	line-height: rem(28);
+}
